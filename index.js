@@ -22,9 +22,18 @@
         'green': document.querySelectorAll( '.bulb' )[ 2 ]
     }
 
-    stopBut.addEventListener( 'click', changeLights )
-    slowBut.addEventListener( 'click', changeLights )
-    goBut.addEventListener( 'click', changeLights )
+    let logLight = ( ( e ) => {
+        console.log( e.target.innerHTML )
+    } )
+
+    let assignEvent = ( ( eventListener, fun ) => {
+        stopBut.addEventListener( eventListener, fun )
+        slowBut.addEventListener( eventListener, fun )
+        goBut.addEventListener( eventListener, fun )
+    } )
+
+    assignEvent( 'click', changeLights )
+    assignEvent( 'mouseenter', logLight )
 
     // YOUR CODE HERE
 } )();
