@@ -5,13 +5,26 @@
     let goBut = document.querySelector( '#goButton' )
 
     let changeLights = ( ( e ) => {
+        let loggingFlag = false
         for ( let key in lightMap ) {
             if ( e.target.id === 'stopButton' ) {
                 lightMap[ key ].style.backgroundColor = 'red'
+                if ( loggingFlag === false ) {
+                    console.log( document.querySelector( '#stopLight' ).id, 'On' )
+                    loggingFlag = true
+                }
             } else if ( e.target.id === 'slowButton' ) {
                 lightMap[ key ].style.backgroundColor = 'yellow'
+                if ( loggingFlag === false ) {
+                    console.log( document.querySelector( '#slowLight' ).id, 'On' )
+                    loggingFlag = true
+                }
             } else if ( e.target.id === 'goButton' ) {
                 lightMap[ key ].style.backgroundColor = 'green'
+                if ( loggingFlag === false ) {
+                    console.log( document.querySelector( '#goLight' ).id, 'On' )
+                    loggingFlag = true
+                }
             }
         }
     } )
