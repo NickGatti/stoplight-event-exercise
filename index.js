@@ -14,6 +14,7 @@
         let loggingFlag = false
         for ( let key in lightMap ) {
             if ( e.target.id === 'stopButton' ) {
+                lightMap[ key ].style.backgroundColor = 'black'
                 if ( loggingFlag === false && key === 'red' ) {
                     if ( lightMap[ key ].style.backgroundColor === 'red' ) {
                         lightMap[ key ].style.backgroundColor = 'black'
@@ -31,6 +32,7 @@
                     loggingFlag = true
                 }
             } else if ( e.target.id === 'slowButton' ) {
+                lightMap[ key ].style.backgroundColor = 'black'
                 if ( loggingFlag === false && key === 'yellow' ) {
                     if ( lightMap[ key ].style.backgroundColor === 'yellow' ) {
                         lightMap[ key ].style.backgroundColor = 'black'
@@ -48,6 +50,7 @@
                     loggingFlag = true
                 }
             } else if ( e.target.id === 'goButton' ) {
+                lightMap[ key ].style.backgroundColor = 'black'
                 if ( loggingFlag === false && key === 'green' ) {
                     if ( lightMap[ key ].style.backgroundColor === 'green' ) {
                         lightMap[ key ].style.backgroundColor = 'black'
