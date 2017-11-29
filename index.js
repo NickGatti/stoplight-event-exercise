@@ -4,25 +4,52 @@
     let slowBut = document.querySelector( '#slowButton' )
     let goBut = document.querySelector( '#goButton' )
 
+    let logging = {
+        flag: false
+    }
+
+    let loggingFlag = false
+
     let changeLights = ( ( e ) => {
         let loggingFlag = false
         for ( let key in lightMap ) {
             if ( e.target.id === 'stopButton' ) {
                 lightMap[ key ].style.backgroundColor = 'red'
                 if ( loggingFlag === false ) {
-                    console.log( document.querySelector( '#stopLight' ).id, 'On' )
+                    if ( logging.flag === false ) {
+                        console.log( document.querySelector( '#stopLight' ).id, 'On' )
+                        logging.flag = document.querySelector( '#stopLight' ).id
+                    } else if ( logging.flag !== false ) {
+                        console.log( logging.flag, 'Off' )
+                        console.log( document.querySelector( '#stopLight' ).id, 'On' )
+                        logging.flag = document.querySelector( '#stopLight' ).id
+                    }
                     loggingFlag = true
                 }
             } else if ( e.target.id === 'slowButton' ) {
                 lightMap[ key ].style.backgroundColor = 'yellow'
                 if ( loggingFlag === false ) {
-                    console.log( document.querySelector( '#slowLight' ).id, 'On' )
+                    if ( logging.flag === false ) {
+                        console.log( document.querySelector( '#slowLight' ).id, 'On' )
+                        logging.flag = document.querySelector( '#slowLight' ).id
+                    } else if ( logging.flag !== false ) {
+                        console.log( logging.flag, 'Off' )
+                        console.log( document.querySelector( '#slowLight' ).id, 'On' )
+                        logging.flag = document.querySelector( '#slowLight' ).id
+                    }
                     loggingFlag = true
                 }
             } else if ( e.target.id === 'goButton' ) {
                 lightMap[ key ].style.backgroundColor = 'green'
                 if ( loggingFlag === false ) {
-                    console.log( document.querySelector( '#goLight' ).id, 'On' )
+                    if ( logging.flag === false ) {
+                        console.log( document.querySelector( '#goLight' ).id, 'On' )
+                        logging.flag = document.querySelector( '#goLight' ).id
+                    } else if ( logging.flag !== false ) {
+                        console.log( logging.flag, 'Off' )
+                        console.log( document.querySelector( '#goLight' ).id, 'On' )
+                        logging.flag = document.querySelector( '#goLight' ).id
+                    }
                     loggingFlag = true
                 }
             }
