@@ -38,6 +38,7 @@
                         lightMap[ key ].style.backgroundColor = 'black'
                     } else {
                         lightMap[ key ].style.backgroundColor = 'yellow'
+                        document.querySelector( '#sound' ).play()
                     }
                     if ( logging.flag === false ) {
                         console.log( document.querySelector( '#slowLight' ).id, 'On' )
@@ -89,6 +90,5 @@
 
     assignEvent( 'click', changeLights )
     assignEvent( 'mouseenter', logLight )
-
     // YOUR CODE HERE
 } )();
