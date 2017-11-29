@@ -14,8 +14,12 @@
         let loggingFlag = false
         for ( let key in lightMap ) {
             if ( e.target.id === 'stopButton' ) {
-                lightMap[ key ].style.backgroundColor = 'red'
-                if ( loggingFlag === false ) {
+                if ( loggingFlag === false && key === 'red' ) {
+                    if ( lightMap[ key ].style.backgroundColor === 'red' ) {
+                        lightMap[ key ].style.backgroundColor = 'black'
+                    } else {
+                        lightMap[ key ].style.backgroundColor = 'red'
+                    }
                     if ( logging.flag === false ) {
                         console.log( document.querySelector( '#stopLight' ).id, 'On' )
                         logging.flag = document.querySelector( '#stopLight' ).id
@@ -27,8 +31,12 @@
                     loggingFlag = true
                 }
             } else if ( e.target.id === 'slowButton' ) {
-                lightMap[ key ].style.backgroundColor = 'yellow'
-                if ( loggingFlag === false ) {
+                if ( loggingFlag === false && key === 'yellow' ) {
+                    if ( lightMap[ key ].style.backgroundColor === 'yellow' ) {
+                        lightMap[ key ].style.backgroundColor = 'black'
+                    } else {
+                        lightMap[ key ].style.backgroundColor = 'yellow'
+                    }
                     if ( logging.flag === false ) {
                         console.log( document.querySelector( '#slowLight' ).id, 'On' )
                         logging.flag = document.querySelector( '#slowLight' ).id
@@ -40,8 +48,12 @@
                     loggingFlag = true
                 }
             } else if ( e.target.id === 'goButton' ) {
-                lightMap[ key ].style.backgroundColor = 'green'
-                if ( loggingFlag === false ) {
+                if ( loggingFlag === false && key === 'green' ) {
+                    if ( lightMap[ key ].style.backgroundColor === 'green' ) {
+                        lightMap[ key ].style.backgroundColor = 'black'
+                    } else {
+                        lightMap[ key ].style.backgroundColor = 'green'
+                    }
                     if ( logging.flag === false ) {
                         console.log( document.querySelector( '#goLight' ).id, 'On' )
                         logging.flag = document.querySelector( '#goLight' ).id
@@ -57,9 +69,9 @@
     } )
 
     let lightMap = {
-        'red': document.querySelectorAll( '.bulb' )[ 0 ],
-        'yellow': document.querySelectorAll( '.bulb' )[ 1 ],
-        'green': document.querySelectorAll( '.bulb' )[ 2 ]
+        'red': document.querySelector( '#stopLight' ),
+        'yellow': document.querySelector( '#slowLight' ),
+        'green': document.querySelector( '#goLight' )
     }
 
     let logLight = ( ( e ) => {
